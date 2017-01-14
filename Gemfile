@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 1.0'
 # Use Fog
 gem 'fog'
+# Use MiniMagick
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
