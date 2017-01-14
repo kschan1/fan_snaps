@@ -2,7 +2,7 @@ body {
   background-color: #dddddd;
 }
 
-.signup {
+.signup, .login {
   padding: 16px 32px 32px 32px;
   background-color: #fff;
   border: solid 1px #eeeeee;

@@ -4,9 +4,9 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.new
-    new_user.email = params['email'].downcase
-    new_user.username = params['username']
-    new_user.password = params['password']
+    new_user.email = params[:email].downcase
+    new_user.username = params[:username]
+    new_user.password = params[:password]
     if new_user.save
       sessions[:user_id] = new_user.id
       redirect_to '/'

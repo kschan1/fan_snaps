@@ -2,6 +2,14 @@
   <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 signup">
     <h3 class="text-center">Create new user</h3>
 
+    <% if @errors %>
+      <ul class="list-unstyled text-danger">
+        <% @errors.each do |field, error| %>
+          <li><%= "#{field} #{error}" %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <%= form_tag '/signup', method: 'post' do %>
       <div class="form-group">
         <label class="control-label" for="email-input">Email:</label>
@@ -21,15 +29,7 @@
       <button class="btn btn-success form-control">Sign Up</button>
     <% end  %>
 
-    <h6 class="text-center">Already have an account? <a href="#">Log in</a></h6>
-
-    <% if @errors %>
-      <ul class="list-unstyled text-danger">
-        <% @errors.each do |field, error| %>
-          <li><%= "#{field} #{error}" %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <h6 class="text-center">Already have an account? <a href="/login">Log in</a></h6>
 
   </div>
 </div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 login">
+    <h3 class="text-center">Log In</h3>
+
+    <% if @error %>
+      <p class="text-danger"><%= @error %></p>
+    <% end %>
+
+    <%= form_tag '/login', method: 'post' do %>
+      <div class="form-group">
+        <label class="control-label" for="email-input">Email:</label>
+        <input type="email" class="form-control" name="email" id="email-input" required>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label" for="password-input">Password:</label>
+        <input type="password" class="form-control" name="password" id="password-input" required>
+      </div>
+
+      <button class="btn btn-success form-control">Log In</button>
+    <% end  %>
+
+    <h6 class="text-center">Don't have an account? <a href="/signup">Sign Up</a></h6>
+
+  </div>
+</div>
