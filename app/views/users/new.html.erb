@@ -4,8 +4,8 @@
 
     <% if @errors %>
       <ul class="list-unstyled text-danger">
-        <% @errors.each do |field, error| %>
-          <li><%= "#{field} #{error}" %></li>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
         <% end %>
       </ul>
     <% end %>
