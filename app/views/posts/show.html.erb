@@ -11,7 +11,7 @@
   <i class="fa fa-heart"></i>
   <span class="likes-count"><%= @post.likes.count %></span>
 
-  <%= form_tag '/comments', method: 'post' do %>
+  <%= form_tag '/comments', method: 'post', remote: true do %>
     <input type="hidden" name="post_id" value="<%= @post.id %>">
     <div class="form-group">
       <label class="control-label" for="post-context">Comment</label>
@@ -21,7 +21,7 @@
     <button class="btn btn-success form-control">Post Comment</button>
   <% end %>
 
-  <ul>
+  <ul class="comments">
     <% @comments.each do |comment| %>
       <li><%= comment.user.username %> <span><%= comment.context %></span></li>
     <% end %>
