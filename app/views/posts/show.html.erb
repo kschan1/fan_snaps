@@ -1,0 +1,7 @@
+<div class="col-md-8">
+  <img class="fit-img" src="<%= @post.image.large %>" alt="">
+  <a href="/posts/<%= @post.id %>/edit"><button class="btn btn-default">Edit</button></a>
+  <%= form_tag "/posts/#{ @post.id }", method: 'delete' do %>
+    <button class="btn btn-danger">Delete</button>
+  <% end %>
+</div>
