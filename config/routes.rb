@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   post '/api/likes', to: 'api/likes#create'
 
+  get '/api/comments', to: 'api/comments#index'
+  post '/api/comments', to: 'api/comments#create'
+
 end
