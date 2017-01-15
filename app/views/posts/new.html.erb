@@ -2,6 +2,14 @@
   <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 login">
     <h3 class="text-center">Upload Image</h3>
 
+    <% if @errors %>
+      <ul class="list-unstyled text-danger">
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <%= form_tag '/posts', method: 'post', multipart: true do %>
       <div class="form-group">
         <label class="control-label" for="post-title">Title:</label>
