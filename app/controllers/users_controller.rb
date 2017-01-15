@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     new_user.password = params[:password]
     if new_user.save
       sessions[:user_id] = new_user.id
-      redirect_to '/'
+      redirect_to '/posts'
     else
       @errors = new_user.errors.full_messages
       render :new
