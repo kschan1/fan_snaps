@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all
+
   end
 
   def show
@@ -9,6 +11,16 @@ class PostsController < ApplicationController
   end
 
   def create
+    post = Post.new
+    post.title = params[:title]
+    post.description = params[:description]
+    post.image = params[:image]
+    post.user_id = session[:user_id]
+    if post.save
+      redirect_to '/posts'
+    else
+      render post.errors
+    end
   end
 
   def edit
