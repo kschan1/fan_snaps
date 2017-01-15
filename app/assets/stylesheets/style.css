@@ -11,3 +11,7 @@ body {
 .fit-img {
   width: 100%;
 }
+
+.context {
+  resize: none;
+}

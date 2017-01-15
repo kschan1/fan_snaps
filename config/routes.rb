@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  post '/comments', to: 'comments#create'
+
   post '/api/likes', to: 'api/likes#create'
 
   get '/api/comments', to: 'api/comments#index'

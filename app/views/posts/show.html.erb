@@ -10,4 +10,20 @@
   <button class="btn btn-primary like">Like</button>
   <i class="fa fa-heart"></i>
   <span class="likes-count"><%= @post.likes.count %></span>
+
+  <%= form_tag '/comments', method: 'post' do %>
+    <input type="hidden" name="post_id" value="<%= @post.id %>">
+    <div class="form-group">
+      <label class="control-label" for="post-context">Comment</label>
+      <textarea type="text" rows="2" class="form-control context" name="context" id="post-context" required></textarea>
+    </div>
+
+    <button class="btn btn-success form-control">Post Comment</button>
+  <% end %>
+
+  <ul>
+    <% @comments.each do |comment| %>
+      <li><%= comment.user.username %> <span><%= comment.context %></span></li>
+    <% end %>
+  </ul>
 </div>
