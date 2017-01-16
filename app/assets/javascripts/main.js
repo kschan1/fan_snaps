@@ -19,4 +19,6 @@ $(document).ready(function() {
     $.ajax(options).done(updateLikesCount);
   });
 
+  $('.dropdown-toggle').dropdown();
+
 });
