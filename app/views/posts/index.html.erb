@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-6 col-xs-12 post-index">
     <a href="/posts/<%= post.id %>"><img class="fit-img" src="<%= post.image.rectangle %>" alt=""></a>
   </div>
 <% end %>
