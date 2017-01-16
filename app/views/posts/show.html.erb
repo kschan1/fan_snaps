@@ -1,7 +1,21 @@
 <article class="post" data-post-id="<%= @post.id %>">
 
   <div class="col-md-8">
+    <h4><%= @post.title %></h4>
+
     <img class="fit-img" src="<%= @post.image.large %>" alt="">
+
+    <div class="row">
+      <div class="col-xs-10">
+        <h4><%= @post.user.username %></h4>
+      </div>
+      <div class="col-xs-2 text-right">
+        <h4>
+          <i class="fa fa-heart like"></i>
+          <span class="likes-count"><%= @post.likes.count %></span>
+        </h4>
+      </div>
+    </div>
 
     <a href="/posts/<%= @post.id %>/edit"><button class="btn btn-default">Edit</button></a>
 
@@ -9,8 +23,6 @@
       <button class="btn btn-danger">Delete</button>
     <% end %>
 
-    <i class="fa fa-heart like"></i>
-    <span class="likes-count"><%= @post.likes.count %></span>
   </div>
 
   <div class="col-md-4 comments">
