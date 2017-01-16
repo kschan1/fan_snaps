@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login
+
   def new
   end
 
@@ -8,7 +10,7 @@ class UsersController < ApplicationController
     new_user.username = params[:username]
     new_user.password = params[:password]
     if new_user.save
-      sessions[:user_id] = new_user.id
+      session[:user_id] = new_user.id
       redirect_to '/posts'
     else
       @errors = new_user.errors.full_messages
