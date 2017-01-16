@@ -1,28 +1,38 @@
-<div class="col-md-8 post" data-post-id="<%= @post.id %>">
-  <img class="fit-img" src="<%= @post.image.large %>" alt="">
+<article class="post" data-post-id="<%= @post.id %>">
 
-  <a href="/posts/<%= @post.id %>/edit"><button class="btn btn-default">Edit</button></a>
+  <div class="col-md-8">
+    <img class="fit-img" src="<%= @post.image.large %>" alt="">
 
-  <%= form_tag "/posts/#{ @post.id }", method: 'delete' do %>
-    <button class="btn btn-danger">Delete</button>
-  <% end %>
+    <a href="/posts/<%= @post.id %>/edit"><button class="btn btn-default">Edit</button></a>
 
-  <i class="fa fa-heart like"></i>
-  <span class="likes-count"><%= @post.likes.count %></span>
-
-  <%= form_tag '/comments', method: 'post', remote: true do %>
-    <input type="hidden" name="post_id" value="<%= @post.id %>">
-    <div class="form-group">
-      <label class="control-label" for="post-context">Comment</label>
-      <textarea type="text" rows="2" class="form-control context" name="context" id="post-context" required></textarea>
-    </div>
-
-    <button class="btn btn-success form-control">Post Comment</button>
-  <% end %>
-
-  <ul class="comments">
-    <% @comments.each do |comment| %>
-      <li><%= comment.user.username %> <span><%= comment.context %></span></li>
+    <%= form_tag "/posts/#{ @post.id }", method: 'delete' do %>
+      <button class="btn btn-danger">Delete</button>
     <% end %>
-  </ul>
-</div>
+
+    <i class="fa fa-heart like"></i>
+    <span class="likes-count"><%= @post.likes.count %></span>
+  </div>
+
+  <div class="col-md-4 comments">
+    <h4>Comments</h4>
+    <%= form_tag '/comments', method: 'post', remote: true do %>
+      <input type="hidden" name="post_id" value="<%= @post.id %>">
+      <div class="form-group">
+        <label class="sr-only" for="post-context">Comment</label>
+        <div class="input-group">
+          <input type="text" class="form-control context" name="context" id="post-context" required>
+          <span class="input-group-btn">
+            <button class="btn btn-success">Post</button>
+          </span>
+        </div>
+      </div>
+    <% end %>
+
+    <ul class="comments-ul list-unstyled">
+      <% @comments.each do |comment| %>
+      <li><%= comment.user.username %> <span><%= comment.context %></span></li>
+      <% end %>
+    </ul>
+  </div>
+
+</article>
