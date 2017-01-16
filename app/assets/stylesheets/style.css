@@ -114,6 +114,10 @@ body {
   cursor: pointer;
 }
 
+.like:hover {
+  color: red;
+}
+
 .red {
   color: red;
 }

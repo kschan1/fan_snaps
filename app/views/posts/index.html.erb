@@ -1,6 +1,6 @@
 <div class="clearfix">
   <% @posts.each do |post| %>
-    <div class="col-md-4 col-sm-6 col-xs-12 post-index">
+    <div class="col-md-4 col-sm-6 col-xs-12 post-index post" data-post-id="<%= post.id %>">
       <div class="post-image">
         <div class="image-info-top">
           <span class="pull-left"><%= post.title %></span>
