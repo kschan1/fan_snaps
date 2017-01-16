@@ -29,10 +29,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to "/posts/#{ params[:id] }" unless current_user.id == @post.user.id
   end
 
   def update
     @post = Post.find(params[:id])
+    redirect_to "/posts/#{ params[:id] }" unless current_user.id == @post.user.id
     @post.title = params[:title]
     @post.description = params[:description]
     @post.image = params[:image]
@@ -46,6 +48,7 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
+    redirect_to "/posts/#{ params[:id] }" unless current_user.id == post.user.id
     post.destroy
     redirect_to '/posts'
   end

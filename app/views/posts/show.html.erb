@@ -6,11 +6,15 @@
         <h4><%= @post.title %></h4>
       </div>
       <div class="col-xs-4">
-        <%= form_tag "/posts/#{ @post.id }", method: 'delete', class: 'pull-right' do %>
-          <button class="btn btn-danger">Delete</button>
-        <% end %>
+        <% if logged_in? && current_user.id == @post.user.id %>
+          <%= form_tag "/posts/#{ @post.id }", method: 'delete', class: 'pull-right' do %>
+            <button class="btn btn-danger"><i class="fa fa-lg fa-trash"></i></button>
+          <% end %>
 
-        <a class="pull-right" href="/posts/<%= @post.id %>/edit"><button class="btn btn-default">Edit</button></a>
+          <a class="pull-right" href="/posts/<%= @post.id %>/edit">
+            <button class="btn btn-default"><i class="fa fa-lg fa-edit"></i></button>
+          </a>
+        <% end %>
       </div>
     </div>
 
