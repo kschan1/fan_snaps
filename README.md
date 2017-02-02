@@ -13,3 +13,5 @@ HTML, CSS, Ruby on Rails, PostgreSQL, Bootstrap, CarrierWave, Amazon S3, Fog.
 * allow user to remove like
 * add routes for user profile/page
 * add tag(s) for posts and filter feature
+* use ajax for image posting
+* image preview when uploading
