@@ -38,7 +38,9 @@ gem 'fog'
 # Use MiniMagick
 gem 'mini_magick'
 # Add font-awesome
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+# Add Bootstrap-Sass
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

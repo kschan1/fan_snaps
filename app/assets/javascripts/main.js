@@ -21,6 +21,4 @@ $(document).ready(function() {
     $.ajax(options).done(updateLikes);
   });
 
-  $('.dropdown-toggle').dropdown();
-
 });
