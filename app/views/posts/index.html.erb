@@ -12,7 +12,11 @@
         <div class="image-info-btm">
           <span class="pull-left"><%= post.user.username %></span>
           <span class="pull-right">
-            <i class="fa fa-heart like"></i>
+            <% if logged_in? && current_user.already_liked?(post) %>
+              <i class="fa fa-heart like red"></i>
+            <% else %>
+              <i class="fa fa-heart like"></i>
+            <% end %>
             <span class="likes-count"><%= post.likes.count %></span>
           </span>
         </div>

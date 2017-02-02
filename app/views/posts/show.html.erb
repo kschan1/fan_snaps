@@ -27,7 +27,11 @@
       </div>
       <div class="col-xs-2 text-right">
         <h4>
-          <i class="fa fa-heart like"></i>
+          <% if logged_in? && current_user.already_liked?(@post) %>
+            <i class="fa fa-heart like red"></i>
+          <% else %>
+            <i class="fa fa-heart like"></i>
+          <% end %>
           <span class="likes-count"><%= @post.likes.count %></span>
         </h4>
       </div>

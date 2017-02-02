@@ -2,9 +2,10 @@ $(document).ready(function() {
 
   // ajax call when like button is clicked
   $('.like').on('click', function(event){
+    var $like_button = $(event.target);
     var $post = $(event.target).closest('.post');
     var postId = $post.data('post-id');
-    var $like = $post.find('.likes-count');
+    var $likes_count = $post.find('.likes-count');
     var options = {
       url: '/api/likes',
       method: 'post',
@@ -13,10 +14,11 @@ $(document).ready(function() {
       },
       dataType: 'JSON'
     };
-    function updateLikesCount(response) {
-      $like.text(response.likes_count);
+    function updateLikes(response) {
+      $like_button.addClass('red');
+      $likes_count.text(response.likes_count);
     }
-    $.ajax(options).done(updateLikesCount);
+    $.ajax(options).done(updateLikes);
   });
 
   $('.dropdown-toggle').dropdown();
