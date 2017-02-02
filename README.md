@@ -1,24 +1,14 @@
-# README
+Fan-Snaps is a photo sharing app for sports fan made using Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Demo Link](https://fan-snaps.herokuapp.com)
 
-Things you may want to cover:
+### Goal:
+More Rails practice.
 
-* Ruby version
+### Technologies:
+HTML, CSS, Ruby on Rails, PostgreSQL, Bootstrap, CarrierWave, Amazon S3, Fog.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Todo:
+* allow user to remove like
+* add routes for user profile/page
+* add tag(s) for posts and filter feature
